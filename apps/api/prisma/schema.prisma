@@ -18,6 +18,6 @@ model User {
   favPet String?
   favTech String?
   married Boolean?
-  birthDay DateTime?
+  birthDay String?
   password String
 }
