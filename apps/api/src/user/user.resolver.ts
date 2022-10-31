@@ -30,12 +30,6 @@ export class UserResolver {
     });
   }
 
-  @Query((returns) => UserModel)
-  @UseGuards(GqlAuthGuard)
-  async me(@Args('email') email: string): Promise<UserModel> {
-    return this.userService.user({ email: email });
-  }
-
   @Mutation((returns) => UserModel)
   @UseGuards(GqlAuthGuard)
   async updateUser(

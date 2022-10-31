@@ -1,6 +1,4 @@
-import { UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { GqlAuthGuard } from 'src/auth/guards/gql-auth.guard';
 import { UserModel } from 'src/user/user.model';
 import { AuthModel } from './auth.model';
 import { AuthService } from './auth.service';
@@ -9,7 +7,7 @@ import { AuthService } from './auth.service';
 export class AuthResolver {
   constructor(private readonly authService: AuthService) {}
 
-  @Query((returns) => AuthModel)
+  @Mutation((returns) => AuthModel)
   async login(
     @Args('password') password: string,
     @Args('email') email: string,
@@ -18,5 +16,10 @@ export class AuthResolver {
       email,
       password,
     });
+  }
+
+  @Query((returns) => UserModel)
+  async me(@Args('access_token') access_token: string): Promise<UserModel> {
+    return this.authService.verify(access_token);
   }
 }

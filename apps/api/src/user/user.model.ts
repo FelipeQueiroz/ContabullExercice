@@ -15,6 +15,9 @@ export class UserModel {
   favPet?: string;
 
   @Field({ nullable: true })
+  favTech?: string;
+
+  @Field({ nullable: true })
   name?: string;
 
   @Field({ nullable: true })
@@ -27,5 +30,5 @@ export class UserModel {
   married?: boolean;
 
   @Field({ nullable: true })
-  birthDay?: Date;
+  birthDay?: string;
 }
