@@ -6,6 +6,7 @@ import App from './App'
 import './index.css'
 import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from './core/theme'
+import { Toggle } from './components/Toggle'
 
 const client = new ApolloClient({
   uri: 'http://localhost:3000/graphql',
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <ChakraProvider>
         <ThemeProvider theme={defaultTheme}>
           <App />
+          <Toggle />
         </ThemeProvider>
       </ChakraProvider>
     </ApolloProvider>
