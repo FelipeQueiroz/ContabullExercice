@@ -12,16 +12,12 @@ import * as yup from 'yup'
 import { StyledInput } from './styles'
 import { LOGIN } from '../gql/auth'
 import { useNavigate } from 'react-router-dom'
+import { LoginFormInputs } from './types'
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
   password: yup.string().required(),
 })
-
-type LoginFormInputs = {
-  email: string
-  password: string
-}
 
 export default function LoginForm() {
   const navigate = useNavigate()

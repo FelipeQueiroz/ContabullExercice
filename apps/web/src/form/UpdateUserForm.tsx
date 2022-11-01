@@ -8,12 +8,14 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 import { ME } from '../gql/auth'
 import { UPDATE_USER } from '../gql/user'
 import { StyledInput } from './styles'
+import { UpdateFormData, UpdateFormInput } from './types'
 
 const schema = yup.object().shape({
   email: yup.string().email().notRequired(),
@@ -25,19 +27,12 @@ const schema = yup.object().shape({
   married: yup.boolean().notRequired().nullable(),
 })
 
-type LoginFormInputs = {
-  email: string
-  password: string
-  name: string
-  birthDay: string
-  city: string
-  favPet: string
-  favTech: string
-  married: string
-}
-
 export default function UpdateUserForm() {
-  const { data, error } = useQuery(ME, {
+  const [user, setUser] = useState<UpdateFormInput>()
+  const navigate = useNavigate()
+  const toast = useToast()
+
+  const { data, error } = useQuery<UpdateFormData>(ME, {
     variables: {
       access_token: localStorage.getItem('auth'),
     },
@@ -47,32 +42,29 @@ export default function UpdateUserForm() {
       headers: { Authorization: 'Bearer ' + localStorage.getItem('auth') },
     },
   })
-  const navigate = useNavigate()
-  const toast = useToast()
 
-  if (!data) navigate('/dashboard')
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormInputs>({
+    reset,
+  } = useForm<UpdateFormInput>({
     mode: 'onBlur',
     resolver: yupResolver(schema),
-    defaultValues: {
-      email: data.me.email,
-      name: data.me.name,
-      birthDay: data.me.birthDay,
-      city: data.me.city,
-      favPet: data.me.favPet,
-      favTech: data.me.favTech,
-      married: data.me.married,
-    },
+    defaultValues: user,
   })
 
-  const onSubmit = async (values: LoginFormInputs) => {
+  useEffect(() => {
+    if (data) {
+      setUser(data?.me)
+      reset(data?.me)
+    }
+  }, [data, reset])
+
+  const onSubmit = async (values: UpdateFormInput) => {
     await updateUser({
       variables: {
-        oldEmail: data.me.email,
+        oldEmail: data?.me.email,
         newEmail: values.email,
         name: values.name,
         birthDay: values.birthDay,
@@ -158,9 +150,10 @@ export default function UpdateUserForm() {
         onClick={handleSubmit(onSubmit)}
         mt="6"
         w="100%"
-        colorScheme="blue"
+        backgroundColor={'#592FC1'}
+        colorScheme="purple"
         variant="solid"
-        disabled={!!errors.email || !!errors.password}
+        disabled={!!errors.email}
       >
         Update profile
       </Button>
@@ -170,7 +163,7 @@ export default function UpdateUserForm() {
         w="100%"
         colorScheme="red"
         variant="solid"
-        disabled={!!errors.email || !!errors.password}
+        disabled={!!errors.email}
       >
         Cancel
       </Button>

@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 import { CREATE_USER } from '../gql/auth'
 import { StyledInput } from './styles'
+import { SignUpFormInputs } from './types'
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -19,12 +20,6 @@ const schema = yup.object().shape({
     .string()
     .oneOf([yup.ref('password'), null], 'Passwords must match'),
 })
-
-type SignUpFormInputs = {
-  email: string
-  password: string
-  confirmPassword: string
-}
 
 export default function SignupForm() {
   const [signUp] = useMutation(CREATE_USER)
