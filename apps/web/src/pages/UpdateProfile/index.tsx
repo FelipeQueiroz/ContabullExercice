@@ -1,5 +1,5 @@
 import { Center, Flex } from '@chakra-ui/react'
-import UpdateUserForm from '../../form/UpdateUserForm'
+import UpdateUserForm from '../../components/form/UpdateUserForm'
 import { Title, Wrapper } from './styles'
 
 export const UpdateProfile = () => {
@@ -10,7 +10,7 @@ export const UpdateProfile = () => {
       alignContent={'center'}
       justifyContent={'center'}
     >
-      <Center>
+      <Center w="580.132px">
         <Wrapper>
           <Title>Update Profile</Title>
           <UpdateUserForm />

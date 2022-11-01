@@ -4,10 +4,6 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.div`
   display: block;
   text-align: left;
-  min-width: 28rem;
-  ${({ theme }) => css`
-    color: ${theme.colors.black};
-  `}
   h1 {
     font-weight: 700;
     font-size: 1.875rem;
