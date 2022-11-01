@@ -10,6 +10,7 @@
 - [x] Create a React __TypeScript__ application using ViteJS
 - [x] Build a simple authentication system
 - [x] Dark mode
+- [x] Cypress e2e authetication tests on branch: [feat/CypressTest](https://github.com/FelipeQueiroz/ContabullExercice/tree/feat/CypressTest)
 
 ## Getting Started
 
