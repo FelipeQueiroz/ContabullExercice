@@ -1,25 +1,67 @@
-# How to start
 
-- Fork this repository as a public repository
-- Launch a MySQL docker container by using the `docker-compose.yaml` configuration provided
-- In the end of the exercice, send us your forked repository
+# Authetication App 
 
-# Exercice tasks
+> Authetication App with basic and secured login/register system made with: NESTJS, GRAPHQL, PRISMA, REACT, VITE.
 
-- Use prisma to interact with the database HINT: [NestJS Docs](https://docs.nestjs.com/recipes/prisma#set-up-prisma)
-  - Create a script to migrate your database. 
-  - Create a seed file and script to seed some data according to the app specification below.
-- Setup a GraphQL endpoint using the code-first approach. Your GQL API should contain the following resolvers: HINT: [NestJS Docs](https://docs.nestjs.com/graphql/quick-start)
-  - MUTATION: createAccount -> creates user account
-  - QUERY: login -> returns a JWT token
-  - MUTATION: updateProfile -> create/updates the profile of the logged in user.
-  - QUERY: me -> return the logged in user profile & user data
-- Create a React __TypeScript__ application using ViteJS HINT: [ViteJS Docs](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
-  - Use [Chakra-UI](https://chakra-ui.com/getting-started)
-  - Use [Codegen](https://www.the-guild.dev/graphql/codegen/docs/getting-started) to generate your GraphQL hooks
-- Build a simple authentication system following this [Figma file](https://www.figma.com/file/pS3uSRdmNafqjHl3TGwOrn/Authentication-exercice?node-id=0%3A1) (extra points for taking into consideration mobile users):
-  - Login page
-  - Signup page
-  - Dashboard page (only accessible to logged in users) where you can see the user profile
-  - Profile edit page (preferably with field validation) HINT: use RHF and Yup
+Link to each projects are below:
 
+* Backend API NodeJS:
+```
+ cd api
+```
+* Frontend React:
+```
+ cd web
+```
+
+
+
+## Getting Started
+
+These instructions will get you a copy of the full project up and running on your local machine for development and testing purposes.
+
+The project can is built in yarn (frontend) and npm (backend).
+
+* **Npm** is distributed with Node.js which means that when you download Node.js, you automatically get npm installed on your computer. [Download Node.js](https://nodejs.org/en/download/)
+
+* **Yarn** is a package manager built by Facebook Team and seems to be faster than npm in general.  [Download Yarn](https://yarnpkg.com/en/docs/install)
+
+## Setting up Databases and Services
+
+```
+1. cd infra
+2. docker-compose up -d --build // to build
+3. docker-compose up
+```
+
+## How to Install
+
+### Backend (API)
+
+* Install the dependencies and start the server:
+
+```
+1. cd api
+2. npm install
+3. npm run start:dev
+```
+
+Rename the file `.env.example` to `.env` and create yours environment variables and replace them. It's is very important for running the server.
+
+### Frontend (React)
+
+* Install the dependencies and start the project:
+
+```
+1. cd web
+3. yarn
+4. yarn dev
+```
+
+## Thank you
+
+Thanks [Rocketseat](https://rocketseat.com.br/) I really liked the bootcamp!
+
+## License
+
+This project could be used by anyone! MIT License
