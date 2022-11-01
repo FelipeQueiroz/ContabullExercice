@@ -3,16 +3,6 @@
 
 > Authetication App with basic and secured login/register system made with: NESTJS, GRAPHQL, PRISMA, REACT, VITE.
 
-Link to each projects are below:
-
-* Backend API NodeJS:
-```
- cd api
-```
-* Frontend React:
-```
- cd web
-```
 ### Features
 
 - [x] Use prisma to interact with the database
