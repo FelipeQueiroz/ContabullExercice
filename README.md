@@ -58,10 +58,6 @@ Rename the file `.env.example` to `.env` and create yours environment variables 
 4. yarn dev
 ```
 
-## Thank you
-
-Thanks [Rocketseat](https://rocketseat.com.br/) I really liked the bootcamp!
-
 ## License
 
 This project could be used by anyone! MIT License
