@@ -20,7 +20,7 @@ Link to each projects are below:
 
 These instructions will get you a copy of the full project up and running on your local machine for development and testing purposes.
 
-The project can is built in yarn (frontend) and npm (backend).
+The project is built in yarn at frontend and npm for backend.
 
 * **Npm** is distributed with Node.js which means that when you download Node.js, you automatically get npm installed on your computer. [Download Node.js](https://nodejs.org/en/download/)
 
