@@ -13,8 +13,12 @@ Link to each projects are below:
 ```
  cd web
 ```
+### Features
 
-
+- [x] Use prisma to interact with the database
+- [x] Setup a GraphQL endpoint using the code-first approach.
+- [x] Create a React __TypeScript__ application using ViteJS
+- [x] Build a simple authentication system
 
 ## Getting Started
 
