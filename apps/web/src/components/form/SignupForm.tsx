@@ -53,7 +53,7 @@ export default function SignupForm() {
   return (
     <form>
       <FormControl isInvalid={!!errors?.email?.message} isRequired>
-        <StyledInput type="email" placeholder="Email" {...register('email')} />
+        <StyledInput id="email" type="email" placeholder="Email" {...register('email')} />
         <FormErrorMessage ml={1}>{errors?.email?.message}</FormErrorMessage>
       </FormControl>
       <FormControl
@@ -61,7 +61,7 @@ export default function SignupForm() {
         isInvalid={!!errors?.password?.message}
         isRequired
       >
-        <StyledInput type="password" placeholder="Password" name="password" />
+        <StyledInput id="password" type="password" placeholder="Password" name="password" />
         <FormErrorMessage ml={1}>{errors?.password?.message}</FormErrorMessage>
       </FormControl>
       <FormControl
@@ -71,6 +71,7 @@ export default function SignupForm() {
       >
         <StyledInput
           type="password"
+          id="confirmPassword"
           placeholder="Confirm password"
           name="confirmPassword"
         />
@@ -79,6 +80,7 @@ export default function SignupForm() {
         </FormErrorMessage>
       </FormControl>
       <Button
+        id="submitButton"
         onClick={handleSubmit(onSubmit)}
         mt="6"
         w="100%"

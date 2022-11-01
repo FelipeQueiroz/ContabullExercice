@@ -51,7 +51,7 @@ export const Dashboard = () => {
           </Text>
           <Text>Birthday: {data.me.birthDay || 'No birthday informed'}</Text>
           <br />
-          <StyledLink to="/dashboard/update">edit profile</StyledLink>
+          <StyledLink to="/dashboard/update" id="editProfileLink">edit profile</StyledLink>
           <Button colorScheme="red" onClick={logout} w="100%" mt="2.1rem">
             Logout
           </Button>

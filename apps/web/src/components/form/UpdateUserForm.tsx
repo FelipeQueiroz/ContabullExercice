@@ -89,7 +89,7 @@ export default function UpdateUserForm() {
   return (
     <form>
       <FormControl isInvalid={!!errors?.email?.message} isRequired>
-        <StyledInput type="email" placeholder="Email" {...register('email')} />
+        <StyledInput id="email" type="email" placeholder="Email" {...register('email')} />
         <FormErrorMessage ml={1}>{errors?.email?.message}</FormErrorMessage>
       </FormControl>
       <FormControl
@@ -97,7 +97,7 @@ export default function UpdateUserForm() {
         isInvalid={!!errors?.name?.message}
         isRequired
       >
-        <StyledInput type="text" placeholder="Name" name="name" />
+        <StyledInput id="name" type="text" placeholder="Name" name="name" />
         <FormErrorMessage ml={1}>{errors?.name?.message}</FormErrorMessage>
       </FormControl>
       <FormControl
@@ -105,7 +105,7 @@ export default function UpdateUserForm() {
         isInvalid={!!errors?.birthDay?.message}
         isRequired
       >
-        <StyledInput type="date" placeholder="BirthDay" name="birthDay" />
+        <StyledInput id="birthday" type="date" placeholder="BirthDay" name="birthDay" />
         <FormErrorMessage ml={1}>{errors?.birthDay?.message}</FormErrorMessage>
       </FormControl>
       <FormControl
@@ -113,7 +113,7 @@ export default function UpdateUserForm() {
         isInvalid={!!errors?.city?.message}
         isRequired
       >
-        <StyledInput type="text" placeholder="City" name="city" />
+        <StyledInput id="city" type="text" placeholder="City" name="city" />
         <FormErrorMessage ml={1}>{errors?.city?.message}</FormErrorMessage>
       </FormControl>
       <FormControl
@@ -121,7 +121,7 @@ export default function UpdateUserForm() {
         isInvalid={!!errors?.favPet?.message}
         isRequired
       >
-        <StyledInput type="text" placeholder="Favorite Pet" name="favPet" />
+        <StyledInput id="favPet" type="text" placeholder="Favorite Pet" name="favPet" />
         <FormErrorMessage ml={1}>{errors?.favPet?.message}</FormErrorMessage>
       </FormControl>
       <FormControl
@@ -130,6 +130,7 @@ export default function UpdateUserForm() {
         isRequired
       >
         <StyledInput
+          id="favTech"
           type="text"
           placeholder="Favorite Tech Stack"
           name="favTech"
@@ -141,12 +142,13 @@ export default function UpdateUserForm() {
         isInvalid={!!errors?.married?.message}
         isRequired
       >
-        <Checkbox name="married" mt="2.1rem" mb="2rem">
+        <Checkbox name="married" mt="2.1rem" mb="2rem" id="married">
           Married
         </Checkbox>
         <FormErrorMessage ml={1}>{errors?.married?.message}</FormErrorMessage>
       </FormControl>
       <Button
+        id="submitButton"
         onClick={handleSubmit(onSubmit)}
         mt="6"
         w="100%"

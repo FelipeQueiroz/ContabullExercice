@@ -50,7 +50,7 @@ export default function LoginForm() {
   return (
     <form>
       <FormControl isInvalid={!!errors?.email?.message} isRequired>
-        <StyledInput type="email" placeholder="Email" {...register('email')} />
+        <StyledInput id="email" type="email" placeholder="Email" {...register('email')} />
         <FormErrorMessage ml={1}>{errors?.email?.message}</FormErrorMessage>
       </FormControl>
       <FormControl
@@ -58,13 +58,14 @@ export default function LoginForm() {
         isInvalid={!!errors?.password?.message}
         isRequired
       >
-        <StyledInput type="password" placeholder="Password" name="password" />
+        <StyledInput id="password" type="password" placeholder="Password" name="password" />
         <FormErrorMessage ml={1}>{errors?.password?.message}</FormErrorMessage>
       </FormControl>
       <Button
         onClick={handleSubmit(onSubmit)}
         mt="6"
         w="100%"
+        id="submitButton"
         variant="solid"
         colorScheme="blue"
         disabled={!!errors.email || !!errors.password}
