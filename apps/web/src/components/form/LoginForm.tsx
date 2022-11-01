@@ -10,7 +10,7 @@ import { useMutation } from '@apollo/client'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { StyledInput } from './styles'
-import { LOGIN } from '../gql/auth'
+import { LOGIN } from '../../gql/auth'
 import { useNavigate } from 'react-router-dom'
 import { LoginFormInputs } from './types'
 
@@ -66,8 +66,7 @@ export default function LoginForm() {
         mt="6"
         w="100%"
         variant="solid"
-        backgroundColor={'#592FC1'}
-        colorScheme="purple"
+        colorScheme="blue"
         disabled={!!errors.email || !!errors.password}
       >
         Login

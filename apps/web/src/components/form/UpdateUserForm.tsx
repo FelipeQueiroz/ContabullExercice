@@ -12,8 +12,8 @@ import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
-import { ME } from '../gql/auth'
-import { UPDATE_USER } from '../gql/user'
+import { ME } from '../../gql/auth'
+import { UPDATE_USER } from '../../gql/user'
 import { StyledInput } from './styles'
 import { UpdateFormData, UpdateFormInput } from './types'
 
@@ -150,8 +150,7 @@ export default function UpdateUserForm() {
         onClick={handleSubmit(onSubmit)}
         mt="6"
         w="100%"
-        backgroundColor={'#592FC1'}
-        colorScheme="purple"
+        colorScheme="blue"
         variant="solid"
         disabled={!!errors.email}
       >
