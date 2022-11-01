@@ -1,4 +1,4 @@
-
+![ProjectImage](https://i.imgur.com/6UJfaxW.png)
 # Authetication App 
 
 > Authetication App with basic and secured login/register system made with: NESTJS, GRAPHQL, PRISMA, REACT, VITE.
@@ -9,6 +9,7 @@
 - [x] Setup a GraphQL endpoint using the code-first approach.
 - [x] Create a React __TypeScript__ application using ViteJS
 - [x] Build a simple authentication system
+- [x] Dark mode
 
 ## Getting Started
 
